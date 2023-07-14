@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Read Google Sheet</title>
+	<style>
+		* {
+			font-family: monospace;
+			font-weight: bold;
+			padding: 0;
+			margin: 0;
+		}
+		tr {
+			background-color: lightGrey;
+		}
+
+		tr:nth-child(2n) {
+			background-color: grey;
+		}
+	</style>
+	<script defer>
+
+	</script>
+</head>
+
+<body>
+	<table></table>
+	<script>
+		fetch('https://script.google.com/macros/s/AKfycbwaiHYGxfAE8FjqKoqUFEBx7WuEvTZj21SZVbdZReXlNq6bgdMr9dEyeDlocNBG9DXPKA/exec')
+			.then(res => res.json())
+			.then(data => {
+		let tr = data.content.reduce((prev, cur) => {
+			let td = cur.map(e => `<td>${e}</td>`)
+			return prev + `<tr>${td.join("")}</tr>`
+			}, "\r")
+		document.querySelector("table").innerHTML = tr;
+		});
+	</script>
+</body>
+
+</html>
