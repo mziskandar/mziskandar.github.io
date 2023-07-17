@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<form method="POST" action="https://script.google.com/macros/s/AKfycbwCPOmtKwyfrdUe0wepTBaF4WYkKCHEW-FoAqSDJxre_Rd_gmokXjnlTyFt0k1RZexUCA/exec">
-<input name="Email" type="email" placeholder="Email" required>
-<input name="Name" type="text" placeholder="Name" required>
-<button type="submit">Send</button>
-</form>
-
-<script defer>
+      <head>
+            <script src="https://apis.google.com/js/api.js"></script>
+    <script>
       function start() {
         // Initializes the client with the API key and the Translate API.
         gapi.client.init({
@@ -33,6 +26,15 @@
       // Loads the JavaScript client library and invokes `start` afterwards.
       gapi.load('client', start);
     </script>
+      </head>
+<body>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
+<form method="POST" action="https://script.google.com/macros/s/AKfycbwCPOmtKwyfrdUe0wepTBaF4WYkKCHEW-FoAqSDJxre_Rd_gmokXjnlTyFt0k1RZexUCA/exec">
+<input name="Email" type="email" placeholder="Email" required>
+<input name="Name" type="text" placeholder="Name" required>
+<button type="submit">Send</button>
+</form>
 
 <div id="results"></div>  
 </body>
